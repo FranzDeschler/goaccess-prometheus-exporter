@@ -1,0 +1,10 @@
+version: "3.7"
+
+services:
+  goaccess-prometheus-exporter:
+    build:
+      dockerfile: Dockerfile
+    ports:
+      - "9100:9100"
+    volumes:
+      - ./LOG_DIRECTORY:/opt/logs:ro
