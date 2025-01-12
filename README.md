@@ -15,8 +15,11 @@ git clone https://github.com/FranzDeschler/goaccess-prometheus-exporter
 2) Adjust the `GoAccess` call in the `/resources/run_goaccess.sh` script to your needs.
    See the [GoAccess man page](https://goaccess.io/man) for parameters.
 
-3) In the `docker-compose.yml` file, adjust the port mapping, as well as the `LOG_DIRECTORY` placeholder to the
-   directory where your log files are that you want to monitor.
+3) In the `docker-compose.yml` file, adjust the following settings:
+   - `LOG_FILES` environment variable: a comma separated list of file names. Wildcards like "*.log" are also possible.
+   - `TIMEZONE` environment variable: A canonical timezone name like "Europe/Berlin". Default is "Etc/UTC".
+   - port mapping
+   - replace  the `LOG_DIRECTORY` placeholder with the directory where your log files are that you want to monitor
 
 4) Create and run the Docker container.
 ```shell

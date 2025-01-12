@@ -4,6 +4,9 @@ services:
   goaccess-prometheus-exporter:
     build:
       dockerfile: Dockerfile
+    environment:
+      LOG_FILES: "*.log"
+      TIMEZONE: "Etc/UTC"
     ports:
       - "9100:9100"
     volumes:

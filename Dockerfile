@@ -13,6 +13,8 @@ COPY /src/* .
 COPY /resources/* .
 RUN chmod +x run_goaccess.sh
 
+ENV LOG_FILES ""
+ENV TIMEZONE "Etc/UTC"
 VOLUME ["/opt/logs"]
 EXPOSE 9100
 ENTRYPOINT ["python3", "/goaccess-prometheus-exporter/main.py"]
